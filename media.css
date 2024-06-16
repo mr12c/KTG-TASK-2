@@ -1,0 +1,41 @@
+@media (min-width:0px) and (max-width:1000px){
+    .second-part{
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .second-part:nth-child(1){
+     width:100%;
+     & .btnswioj{
+          width: 100%;
+     }
+    }
+
+  
+    .player-cards{
+        flex-direction: row;
+        margin-right: auto;
+        margin-left: auto;
+         
+        & div:nth-child(1){
+            
+          width: 100%;
+           
+           
+          & img{
+            width: 3.3rem;
+            height:3.3rem
+          }
+        }
+        & div:nth-child(2){
+            
+          width:100%;
+          
+           
+        }
+      }
+      
+      .choices p{
+         
+      }
+}
