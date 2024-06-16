@@ -130,6 +130,7 @@ const computerTurn = (size) => {
         const target = e.target;
         if (target.innerHTML === "") {
             target.style.color = "yellow";
+            renderResutls()
             target.innerHTML = "O";
             data[Number(target.getAttribute("row"))][Number(target.getAttribute("col"))] = target.innerHTML;
 
@@ -158,6 +159,7 @@ const computerTurn = (size) => {
             if (cells[rand].innerHTML === "") {
                 cells[rand].style.color = "#8FDD28";
                 cells[rand].innerHTML = "X";
+                renderResutls()
                 data[Number(cells[rand].getAttribute("row"))][Number(cells[rand].getAttribute("col"))] = cells[rand].innerHTML;
                 checkWinner(size);
                 console.log(data);
@@ -490,43 +492,58 @@ const checkWinner = (size) => {
 
 //  /////////// function -for -rendering -results///////////////////////////
 let renderResutls = () =>{
-    let table = document.createElement('div');
-    table.innerHTML=`
-    <div class="container mx-auto p-6">
-        <h1 class="text-4xl font-bold text-center mb-8">Tic Tac Toe Game Results</h1>
+    let table = document.querySelector('.result-container');
+    
+    
 
-        <div class="flex justify-center">
-            <div class="w-full max-w-4xl">
-                <table class="min-w-full bg-white rounded-lg shadow-md">
-                    <thead>
-                        <tr class=" my-data-heading text-white text-lg leading-normal">
-                            <th class="py-3 px-6 text-left">Player</th>
-                            <th class="py-3 px-6 text-center">Wins</th>
-                            <th class="py-3 px-6 text-center">Losses</th>
-                            <th class="py-3 px-6 text-center">Draws</th>
-                        </tr>
-                    </thead>
-                    <tbody class=" text-lg  bgdedo2">
-                        <tr class="border-b border-gray-200  ">
-                            <td class="py-3 px-6 text-left">${user1.name}</td>
-                            <td class="py-3 px-6 text-center">${user1.win}</td>
-                            <td class="py-3 px-6 text-center"><${user1.loss}/td>
-                            <td class="py-3 px-6 text-center"><${user1.draw}/td>
-                        </tr>
-                        <tr class="border-b border-gray-200  ">
-                            <td class="py-3 px-6 text-left">${user2.name}</td>
-                            <td class="py-3 px-6 text-center">${user2.win}</td>
-                            <td class="py-3 px-6 text-center"><${user2.loss}/td>
-                            <td class="py-3 px-6 text-center">${user2.draw}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>`
+    table.innerHTML=` <div class="container resultcard mx-auto px-4">
+                                <h1 class="font-bold text-[1.4rem] mt-10 text-center" style="color:#3EC5F3">LeaderBoard</h1>
+                                <div class="flex justify-center mt-6">
+                                    <div class="w-full max-w-4xl overflow-x-auto">
+                                        <table class="min-w-full rounded-lg shadow-md">
+                                            <thead>
+                                                <tr class="  text-white text-lg leading-normal">
+                                                    <th class="py-3 px-6 text-left">Player</th>
+                                                    <th class="py-3 px-6 text-center">Wins</th>
+                                                    <th class="py-3 px-6 text-center">Losses</th>
+                                                    <th class="py-3 px-6 text-center">Draws</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="text-lg  ">
+                                                <tr>
+                                                    <td class="py-3 px-6 text-left text-[1.4rem] font-medium text-indigo-500">Player 1</td>
+                                                    <td class="py-3 px-6 text-center text-red-500">${user1.win}</td>
+                                                    <td class="py-3 px-6 text-center text-yellow-500">${user1.lose}</td>
+                                                    <td class="py-3 px-6 text-center text-green-500">${user1.draw}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-3 px-6 text-left text-[1.4rem] font-medium text-indigo-500">Player 2</td>
+                                                    <td class="py-3 px-6 text-center text-red-500">${user2.win}</td>
+                                                    <td class="py-3 px-6 text-center text-yellow-500">${user2.lose}</td>
+                                                    <td class="py-3 px-6 text-center text-green-500">${user2.draw}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-3 px-6 text-left text-[1.4rem] font-medium text-indigo-500">Computer</td>
+                                                    <td class="py-3 px-6 text-center text-red-500">${computer.win}</td>
+                                                    <td class="py-3 px-6 text-center text-yellow-500">${computer.lose}</td>
+                                                    <td class="py-3 px-6 text-center text-green-500">${computer.draw}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>`
+       
+                            table.classList.remove("invisible")
+                            table.classList.add("visible")
+
+                        
+     
 
 
 }
+
+ 
 
 
 // function for defualt state////
@@ -657,12 +674,14 @@ function createTicTacToeGrid(size) {
                         e.target.innerHTML = "O";
                         data[Number(e.target.getAttribute("row"))][Number(e.target.getAttribute("col"))] =e.target.innerHTML;
                         checkWinner(gridSize)
+                        renderResutls()
     
                     } else {
                         e.target.style="color:#37ff00"
                         e.target.innerHTML = "X";
                         data[Number(e.target.getAttribute("row"))][Number(e.target.getAttribute("col"))] =e.target.innerHTML;
                         checkWinner(gridSize)
+                        renderResutls()
     
                     }
                     move = !move;
@@ -713,7 +732,10 @@ document.querySelector("#btn-1p").addEventListener("click",(e)=>{
     whoIsPlaying = [user1 , user2]
     console.log(e)
     createTicTacToeGrid(gridSize);
-    renderUserData(user1,user2)
+    renderUserData(user1,user2);
+    renderResutls()
+    document.querySelector(".btn-set").classList.remove("invisible");
+    document.querySelector(".btn-set").classList.add("visible");
     playersCard.style="opacity:1;margin-top:5%"
     choice.style="display:none"
   
@@ -725,8 +747,11 @@ document.querySelector("#btn-2p").addEventListener("click",(e)=>{
     whoIsPlaying= [user1,computer]
     createTicTacToeGrid(gridSize);
     renderUserData(user1,computer);
+    renderResutls()
     playersCard.style="opacity:1;margin-top:5%"
     choice.style="display:none"
+    document.querySelector(".btn-set").classList.add("visible");
+    document.querySelector(".btn-set").classList.remove("invisible");
      
 
 
@@ -810,3 +835,22 @@ document.querySelector("#r1").addEventListener("click",()=>{
 })
 
 // function for checking winner
+
+
+
+
+window.addEventListener("beforeunload",()=>{
+    localStorage.setItem("p1", JSON.stringify(user1))
+    localStorage.setItem("p2", JSON.stringify(user2))
+    localStorage.setItem("c1", JSON.stringify(computer))
+})
+
+window.addEventListener("load",()=>{
+    user1 = JSON.parse(localStorage.getItem("p1"))
+    user2 = JSON.parse(localStorage.getItem("p2"))
+    computer = JSON.parse(localStorage.getItem("c1"))
+    console.log(user1)
+    console.log(user2)
+    console.log(computer)
+     
+})
