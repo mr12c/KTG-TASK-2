@@ -144,6 +144,8 @@ font-size: 1.3rem;
 
 }
 
+#reset-score-btn,
+
 #reset-btn{
   
 
@@ -193,6 +195,8 @@ font-size: 1.3rem;
   }
 }
 
+ 
+
 
 .player-cards{
   flex-direction: col;
@@ -227,3 +231,9 @@ tr{
 table{
   width: 100%;
 }
+
+
+.winner-container2{
+  backdrop-filter: blur(20px);
+  background-color:rgba(61, 61, 61, 0.773) ;
+ }

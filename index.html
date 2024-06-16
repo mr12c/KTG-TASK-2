@@ -63,7 +63,7 @@
     }
 </style>
 <body class="relative">
-     <div id="result-container" class="w-[100vw] h-[100vh]  absolute invisible">
+     <div id="result-container" class="w-[100vw] h-[100vh] z-[2000]  absolute invisible">
         <div   class="absolute  winner-container2 w-[90vw] xl:w-[20vw] h-[300px] xl:h-[340px] py-3">
             <img src="public/CLIPLY_372109170_FREE_FIREWORKS_400.gif" alt="" class="absolute    ">
 
@@ -74,7 +74,7 @@
           </div>
       </div>
      </div>
-    <div id="refresh-model-container" class="absolute w-[100vw] top-0 bg-[#dad7d7d7] h-[200vh]   z-[1000]   invisible ">
+    <div id="refresh-model-container" class="absolute w-[100vw] top-0 bg-[#dad7d7d7] h-[100vh]   z-[1000]   invisible ">
         <div id="refresh-model" class="rounded-xl  p-3 sm:w-[60vw] md:w-[60vw] lg:w-[80vw] xl:w-[400px] w-[90vw] xl:w-[20vw]        flex flex-col right-auto  left-auto">
             <h1 class="text-[1.9rem] font-bold ">ResetGame</h1>
             <p>Are you sure you want to reset the current game? The board will be cleared, and the game will start over. This action cannot be undone.</p>
@@ -89,7 +89,9 @@
                             <h1 class="text-[yellow] font-bold text-[3rem] mt-[-3rem]">tac</h1>
                             <h1 class="text-[white] font-bold text-[3rem] mt-[-3rem]">toe</h1></div>
 
-                            <div class="btn-set invisible"><button class="px-4 py-2 rounded-full " id="home-btn">Home</button> <button class="px-4 py-2 rounded-full" id="reset-btn">Reset</button></div>
+                            <div class="btn-set invisible mr-0"><button class="px-4 py-2 rounded-full " id="home-btn">Home</button>  <button class="px-4 py-2 rounded-full" id="reset-btn">Reset game</button>
+                                <button class="px-4 py-2 rounded-full" id="reset-score-btn">Reset score</button>
+                            </div>
                         </div>
                  
                  <div class="w-[95%] flex    second-part">
@@ -113,6 +115,7 @@
                             
                         </div>
                         <div class="result-container invisible  mt-[10%]">
+                              
                             
                         </div>
                       

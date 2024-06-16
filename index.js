@@ -489,6 +489,17 @@ const checkWinner = (size) => {
     return "No winner yet";
 };
 
+// score reset btn
+
+// const scoreResetBtn = document.querySelector('#score-reset-btn');
+// scoreResetBtn.addEventListener('click', () => {
+//     whoIsPlaying.forEach((player,index)=>{
+//         player.win=0;
+//         player.lose=0;
+//         player.draw=0;
+//     })
+// })
+
 
 //  /////////// function -for -rendering -results///////////////////////////
 let renderResutls = () =>{
@@ -497,7 +508,7 @@ let renderResutls = () =>{
     
 
     table.innerHTML=` <div class="container resultcard mx-auto px-4">
-                                <h1 class="font-bold text-[1.4rem] mt-10 text-center" style="color:#3EC5F3">LeaderBoard</h1>
+                               <div>  <h1 class="font-bold text-[1.4rem] mt-10 text-center" style="color:#3EC5F3">LeaderBoard</h1>  </div>
                                 <div class="flex justify-center mt-6">
                                     <div class="w-full max-w-4xl overflow-x-auto">
                                         <table class="min-w-full rounded-lg shadow-md">
@@ -853,4 +864,22 @@ window.addEventListener("load",()=>{
     console.log(user2)
     console.log(computer)
      
+})
+
+
+
+// score reset btn
+
+const scoreResetBtn = document.querySelector('#reset-score-btn');
+scoreResetBtn.addEventListener('click', () => {
+    user1.win=0
+    user1.lose=0
+    user1.draw=0;
+    user2.win=0
+    user2.lose=0
+    user2.draw=0;
+    computer.win=0
+    computer.lose=0
+    computer.draw=0;
+    renderResutls()
 })
