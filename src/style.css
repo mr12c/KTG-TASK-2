@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;;
+}
+
+ 
+
+.user-card{
+  position: relative;
+  
+  background-color: #5b5a5a2a;
+   backdrop-filter:blur(20px);
+   border:solid 0.4px rgba(128, 128, 128, 0.1);
+  color:white;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  & img{
+    position: absolute;
+    top:-20px;
+    left:50%;
+    transform:translateX(-50%)
+  }
+}
+body{
+  overflow-x: hidden;
+  background-color: #100825;
+}
+button{
+  text-transform: capitalize;
+}
+.line-height{
+  line-height: 1px;
+}
+
+.user-card:nth-child(2){
+  color:rgb(153, 153, 153);
+}
+
+.username1{
+  color:rgb(217, 214, 214);
+  font-size: 0.8rem;
+}
+
+.username2{
+  color:white
+}
+
+.player-cards{
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+}
+
+.tttcell{
+  border:dotted 2px  rgb(167, 169, 189);
+  /* background-color: rgb(251, 10, 255); */
+  
+  
+}
+.my-logo-img{
+  transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.4s;
+  animation: anime 4s cubic-bezier(0.19, 1, 0.22, 1)  infinite  ;
+}
+ 
+@keyframes anime {
+  0%{
+    transform: translateY(0px);
+  }
+  30%{
+    transform: translateY(30px);
+  }
+  60%{
+    transform: translateY(0px);
+  }
+  90%{
+    transform: translateY(-30px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+ 
+
+.choices p{
+  text-align: center;
+}
+
+
+.choice-container{
+  background-color: #3a3a3a33;
+   
+   padding: 10px;
+   border:solid 1px rgb(107, 106, 106);
+   border-radius: 20px;
+   backdrop-filter: blur(30px);
+}
+
+.choice-container .choice-header{
+  font-size: 2.5rem;
+  font-weight: 600;
+  color:rgb(137, 64, 239)
+}
+
+.choices p{
+color:rgb(0, 0, 0);
+font-size: 1.3rem;
+
+}
+
+
+.resultscreen{
+  background-color: #b2b2b2e5;
+}
+
+.resultscreen{
+  background-color: blue;
+  display: none;
+}
+
+#home-btn{
+  
+
+
+
+  background: #FF615F;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+
+}
+
+#reset-score-btn,
+
+#reset-btn{
+  
+
+  background-color: #dbf2e4;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: black;
+  font-weight:600;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+ 
+}
+
+#reset-btn:hover{
+  
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  
+}
+
+#edit-container{
+   background-color: rgba(255, 255, 255, 0.361);;
+ 
+}
+ 
+.bgdedo{
+  border: solid 1px rgba(255, 255, 255, 0.4);
+}
+
+#refresh-model{
+  position: absolute;
+  background:rgb(222, 185, 255);
+  left:auto;
+  right:auto;
+  margin-left: 50%;
+   
+  transform: translateX(-50%)  translateY(170%);
+  z-index: 1000;
+  & button:nth-of-type(1){
+   
+    background-color: red;
+    border-radius: 10px;
+    
+  }
+}
+
+ 
+
+
+.player-cards{
+  flex-direction: col;
+  & div:nth-child(1){
+    width: 70%;
+  }
+  & div:nth-child(2){
+    width:70%
+  }
+}
+
+.user-card{
+  justify-content: center;
+  justify-items: center;
+}
+
+
+
+.resultcard {
+  background-color: #4242426a;
+  backdrop-filter: blur(29px);
+  padding: 10px;
+  padding-bottom: 20px;
+  border-radius: 30px;
+  border:solid 1px rgba(107, 106, 106, 0.495);
+}
+
+tr{
+  border-bottom: solid 1px rgb(112, 108, 108);
+}
+
+table{
+  width: 100%;
+}
+
+
+.winner-container2{
+  backdrop-filter: blur(20px);
+  background-color:rgba(61, 61, 61, 0.773) ;
+ }
